@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLAI</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .content {
+            text-align: center;
+            margin-top: 50px;
+        }
+        img {
+            max-width: 640px;
+            max-height: 360px;
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1 class="display-4">{{ content.heading }}</h1>
+        <p class="lead">{{ content.description }}</p>
+        {% if content.image %}
+            <img src="{{ content.image.url }}" alt="Homepage Image" class="img-fluid">
+        {% endif %}
+        <div id="datetime" class="mt-3"></div>
+    </div>
+    <script>
+        function updateTime() {
+            const options = { month: 'long', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+            const now = new Date().toLocaleString('en-US', options).replace(',', '');
+            document.getElementById('datetime').innerText = now;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
