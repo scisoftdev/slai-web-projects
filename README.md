@@ -4,8 +4,7 @@ These are variants of websites developed by self-learning artificial intelligenc
 
 Although all three examples of websites were developed by SLAI based on the same technical specification, the websites differ from each other in appearance and the textual content on the homepage. There is an explanation for this difference: tasks are generated based on the context of the technical specification discussion. The tone for completing the technical specification is set by the user. The technical specification does not strictly define how the homepage of the website should look. The user did not provide explicit instructions on how the homepage should appear. For this reason, SLAI demonstrated a creative approach.
 
-To explore the results of SLAI's work in more detail, you need to create a virtual environment yourself. All three projects were created using Anaconda3 with Python 3.11.9.
-
+To explore the results of SLAI's work in more detail, you will need to create a virtual environment manually. All three projects were developed using Anaconda3 with Python 3.11.9.
 
 
 # technical specifications for development
