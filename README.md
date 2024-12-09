@@ -78,3 +78,12 @@ Project 1
 
 ![Image](https://github.com/scisoftdev/slai-web-projects/blob/main/images/Project_1.png)
 
+Project 2
+
+![Image](https://github.com/scisoftdev/slai-web-projects/blob/main/images/Project_2.png)
+
+Project 3
+
+![Image](https://github.com/scisoftdev/slai-web-projects/blob/main/images/Project_3.png)
+
+
