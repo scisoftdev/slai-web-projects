@@ -74,15 +74,15 @@ The task is to create a simple website with a single homepage using Django 4, wh
 
 # Results overview
 
-Project 1
+## Project 1
 
 ![Image](https://github.com/scisoftdev/slai-web-projects/blob/main/images/Project_1.png)
 
-Project 2
+## Project 2
 
 ![Image](https://github.com/scisoftdev/slai-web-projects/blob/main/images/Project_2.png)
 
-Project 3
+## Project 3
 
 ![Image](https://github.com/scisoftdev/slai-web-projects/blob/main/images/Project_3.png)
 
