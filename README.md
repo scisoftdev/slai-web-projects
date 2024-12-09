@@ -2,8 +2,7 @@
 
 These are variants of websites developed by self-learning artificial intelligence (SLAI) based on a predefined specification. The specification is discussed with the user in advance to clarify project details. According to the requirements, creating a database, setting up a virtual environment, and configuring the settings for running the website on the server (e.g., Gunicorn, uWSGI) are not required. The primary goal of the testing was to evaluate SLAI's ability to implement a project with numerous editable files and executable terminal commands.
 
-Although all three examples of websites were developed by SLAI based on the same technical specification, the websites differ from each other in appearance and the textual content on the homepage. There is an explanation for this difference: tasks are generated based on the context of the technical specification discussion. The tone for completing the technical specification is set by the user. The technical specification does not strictly define how the homepage of the website should look. The user did not provide explicit instructions on how the homepage should appear. For this reason, SLAI demonstrated a creative approach, so to speak.
-
+Although all three examples of websites were developed by SLAI based on the same technical specification, the websites differ from each other in appearance and the textual content on the homepage. There is an explanation for this difference: tasks are generated based on the context of the technical specification discussion. The tone for completing the technical specification is set by the user. The technical specification does not strictly define how the homepage of the website should look. The user did not provide explicit instructions on how the homepage should appear. For this reason, SLAI demonstrated a creative approach.
 # technical specifications for development
 
 ### Technical Specification: Creating a Simple Django Website
