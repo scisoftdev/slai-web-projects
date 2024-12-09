@@ -72,7 +72,7 @@ The task is to create a simple website with a single homepage using Django 4, wh
 - Format: `"December 31, 15:15:15"`
 - The date and time should update every second for accurate display.
 
-# Results overview
+# results overview
 
 ## Project 1
 
