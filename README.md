@@ -1,2 +1,7 @@
 # slai-web-projects
-A collection of website variants and prototypes created using SLAI. This repository serves as a showcase and library of web projects designed for various use cases, featuring innovative designs and efficient implementations.
+
+These are website variants developed by self-learning artificial intelligence (SLAI) based on a technical specification. The technical specification is discussed with the user in advance to clarify the project details. According to the technical specification, creating a database, a virtual environment, and settings for running the website on the server (Gunicorn, uWSGI, etc.) is not required. The primary goal of the conducted testing was to check whether SLAI could implement a project with multiple editable files and terminal commands.
+
+Despite the fact that all three examples of websites were developed by SLAI based on the same technical specification, the websites differ from each other. For instance, in one of the variants, the admin panel of the website implements redirection to the content editing page after saving, while in another variant, it does not.
+
+There is an explanation for this difference. Tasks for execution are formed taking into account the context of the technical specification discussion. The user sets the tone for completing the technical specification. For example, strict adherence to the technical specification does not imply the creation of redirection to the content editing page, whereas the presence in the context of an indication that the website should be convenient and easy to use leads to the appearance of convenient redirection to the content editing page after saving the content of the page.
