@@ -86,4 +86,7 @@ The task is to create a simple website with a single homepage using Django 4, wh
 
 ![Image](https://github.com/scisoftdev/slai-web-projects/blob/main/images/Project_3.png)
 
+## Admin Panel
+
+![Image](https://github.com/scisoftdev/slai-web-projects/blob/main/images/Admin_panel.png)
 
