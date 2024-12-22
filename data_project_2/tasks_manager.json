@@ -1,0 +1,364 @@
+[
+    {
+        "task_id": "1.1",
+        "description": "Create a new Django project in the /home/scisoftdev/PycharmProjects/slai/Project directory named 'Project'. Use the standard Django command to create the project.",
+        "context": "This will create a basic Django project with the necessary file and directory structure needed to run the application.",
+        "code": "django-admin startproject Project /home/scisoftdev/PycharmProjects/slai/Project",
+        "expected_output": "A working Django project with basic file structure.",
+        "status": "completed",
+        "assigned_to": "GPT",
+        "task_name": "Creating a new Django project",
+        "notes": "Make sure Django is installed and that the Python PATH is set correctly.",
+        "priority": 1,
+        "steps": [
+            "Step: Use the command in the terminal to create a Django project in the specified directory.",
+            "Result: A created Django project with standard files such as manage.py and a Project directory with settings."
+        ],
+        "constraints": "Use Django commands without modifications to ensure correct installation.",
+        "dependencies": [],
+        "files": {
+            "settings": [
+                "/home/scisoftdev/PycharmProjects/slai/Project/manage.py",
+                "/home/scisoftdev/PycharmProjects/slai/Project/Project/__init__.py"
+            ]
+        },
+        "validation": [
+            "Criteria: The project must contain the standard Django structure and run without errors."
+        ]
+    },
+    {
+        "task_id": "2.1",
+        "description": "Create a new Django application named 'slai' inside the project.",
+        "context": "The application will contain a main page and all related files to handle requests.",
+        "code": "python manage.py startapp slai",
+        "expected_output": "A working Django application with a basic file structure.",
+        "status": "completed",
+        "assigned_to": "GPT",
+        "task_name": "Creating a New Django Application",
+        "notes": "Check that the application is registered correctly in settings.py.",
+        "priority": 1,
+        "steps": [
+            "Step: Run the command to create a Django application inside the project.",
+            "Result: A Django application is created with basic files such as models.py, views.py and migrations."
+        ],
+        "constraints": "Use standard Django commands to create applications.",
+        "dependencies": [
+            "1.1"
+        ],
+        "files": {
+            "settings": [
+                "/home/scisoftdev/PycharmProjects/slai/Project/slai/migrations/__init__.py",
+                "/home/scisoftdev/PycharmProjects/slai/Project/Project/settings.py"
+            ]
+        },
+        "validation": [
+            "Criteria: The application must be correctly registered and appear in INSTALLED_APPS settings.py."
+        ]
+    },
+    {
+        "task_id": "2.2",
+        "task_name": "Registering an application in Django settings",
+        "description": "Add the created slai app to the INSTALLED_APPS list in your settings.py file so that Django knows about its existence and can use its functionality.",
+        "context": "INSTALLED_APPS contains a list of all enabled Django applications that need to be configured for the entire project to work correctly.",
+        "steps": [
+            "Step: Open settings.py file and add 'slai' to INSTALLED_APPS list.",
+            "Result: The application is registered and can be used in the project."
+        ],
+        "validation": [
+            "Criteria: The application must be visible to Django and work without errors when the server starts."
+        ],
+        "dependencies": [
+            "1.1",
+            "2.1"
+        ],
+        "constraints": "Changes to settings.py can be made without breaking existing records.",
+        "expected_output": "Correct registration of the slai application in INSTALLED_APPS.",
+        "notes": "Check that all paths in settings.py are set correctly.",
+        "files": {
+            "settings": [
+                "/home/scisoftdev/PycharmProjects/slai/Project/Project/settings.py"
+            ]
+        },
+        "status": "completed",
+        "priority": 2,
+        "assigned_to": "GPT"
+    },
+    {
+        "task_id": "3.1",
+        "description": "Create a Python program that reads the contents of the settings.py file and outputs it to the console.",
+        "context": "This program will help you check the file contents before you start editing. This is necessary for further editing of the database connection configuration.",
+        "code": "The program uses open() to read the file and print() to print the contents.",
+        "expected_output": "All-text output of the contents of settings.py to the console.",
+        "status": "completed",
+        "assigned_to": "GPT",
+        "task_name": "Reading the contents of the settings.py file",
+        "notes": "The program must be executed in the Python 3 environment.",
+        "priority": 2,
+        "steps": [
+            "Step: Write a program that uses open() to read and print() to print the contents.",
+            "Result: Console output of the full contents of the settings.py file, confirming its correctness."
+        ],
+        "constraints": "Do not modify the file, only read and output.",
+        "dependencies": [
+            "1.1",
+            "2.1"
+        ],
+        "files": {
+            "settings": [
+                "/home/scisoftdev/PycharmProjects/slai/Project/Project/settings.py"
+            ]
+        },
+        "validation": [
+            "Criterion: The program must correctly read and output the full text of the file without errors."
+        ]
+    },
+    {
+        "task_id": "3.2",
+        "description": "Create a Python program that updates the settings.py file to configure a PostgreSQL database connection using the following parameters: user postgres, password postgres, host 127.0.0.1, port 5432.",
+        "context": "The settings.py file requires updating the DATABASES section to work correctly with the PostgreSQL database.",
+        "code": "The program opens settings.py, changes the lines of the DATABASES section and saves the file.",
+        "expected_output": "The settings.py file with the correct PostgreSQL connection configuration.",
+        "status": "completed",
+        "assigned_to": "GPT",
+        "task_name": "Updating PostgreSQL connection settings",
+        "notes": "Check that the PostgreSQL server is running and accessible.",
+        "priority": 3,
+        "steps": [
+            "Step 1: Read the current settings.py file and get its contents.",
+            "Step 2: Find the DATABASES section in the contents and change the connection parameters.",
+            "Step 3: Write the updated contents back to settings.py, preserving the file formatting and syntax.",
+            "Result: The settings.py file is updated with the correct settings for the PostgreSQL database."
+        ],
+        "constraints": "Changes can be made only by the program, without manual editing.",
+        "dependencies": [
+            "3.1"
+        ],
+        "files": {
+            "settings": [
+                "/home/scisoftdev/PycharmProjects/slai/Project/Project/settings.py"
+            ]
+        },
+        "validation": [
+            "Criterion 1: All changes to the settings.py file must be checked for syntax errors and not interfere with running the project.",
+            "Criterion 2: The program must return a successful connection to the database when the project is started."
+        ]
+    },
+    {
+        "task_id": "4.1",
+        "description": "Create an HTML template for the main page in the /home/scisoftdev/PycharmProjects/slai/Project/slai/templates/slai directory with the necessary content: text about the project and an element for displaying time.",
+        "context": "The text should contain information about the self-learning AI project called SLAI.",
+        "code": "HTML file with div elements for text and time, and script connection for time.",
+        "expected_output": "The home.html file contains text and elements for JavaScript.",
+        "status": "completed",
+        "assigned_to": "GPT",
+        "task_name": "Creating a Home Page HTML Template",
+        "notes": "Make sure the HTML structure is correct.",
+        "priority": 4,
+        "steps": [
+            "Step: Create an HTML file with div elements for text and space for time.",
+            "Result: A home.html file with a basic page template and JavaScript enabled."
+        ],
+        "constraints": "Use standard HTML tags and structures.",
+        "dependencies": [
+            "2.1"
+        ],
+        "files": {
+            "templates": [
+                "/home/scisoftdev/PycharmProjects/slai/Project/slai/templates/slai/home.html"
+            ]
+        },
+        "validation": [
+            "Criteria: The HTML template must load and display without errors."
+        ]
+    },
+    {
+        "task_id": "4.2",
+        "description": "Add JavaScript code that will show the current time and update it every second on the main page.",
+        "context": "The script should dynamically update the HTML element to display the time.",
+        "code": "JavaScript code using the Date() function and the setInterval() method.",
+        "expected_output": "Working JavaScript code that updates the time on the page.",
+        "status": "completed",
+        "assigned_to": "GPT",
+        "task_name": "Create a JavaScript Script to Display Time",
+        "notes": "Check the script's operation in different browsers.",
+        "priority": 4,
+        "steps": [
+            "Step: Write JavaScript code using Date() function and setInterval() method to update time.",
+            "Result: Dynamic display of the current time on the page."
+        ],
+        "constraints": "JavaScript must be embedded directly into the page's HTML file.",
+        "dependencies": [
+            "4.1"
+        ],
+        "files": {
+            "templates": [
+                "/home/scisoftdev/PycharmProjects/slai/Project/slai/templates/slai/home.html"
+            ]
+        },
+        "validation": [
+            "Criteria: JavaScript must update the time element every second without error."
+        ]
+    },
+    {
+        "task_id": "5.1",
+        "task_name": "Creating a Django Model for the Front Page Content",
+        "description": "Create a Django model that will store the text and image for the home page so that the administrator can edit them.",
+        "context": "The model should contain fields for page text and images that can be modified through administration.",
+        "steps": [
+            "Step: Create a models.py file in the slai app and add a HomePageContent model with title, text and image fields.",
+            "Result: The models.py file contains the correct model for the main page."
+        ],
+        "validation": [
+            "Criteria: The model must be correctly created and supported by the Django migration system."
+        ],
+        "dependencies": [
+            "2.1"
+        ],
+        "constraints": "Use standard Django ORM features to create a model.",
+        "expected_output": "The HomePageContent model has been added to the models.py file.",
+        "notes": "Make sure the slai application is added to the INSTALLED_APPS field.",
+        "files": {
+            "models": [
+                "/home/scisoftdev/PycharmProjects/slai/Project/slai/models.py"
+            ]
+        },
+        "status": "completed",
+        "priority": 5,
+        "assigned_to": "GPT"
+    },
+    {
+        "task_id": "5.2",
+        "task_name": "Creating and applying migrations for a new model",
+        "description": "Create and apply migrations for the HomePageContent model in the slai application.",
+        "context": "Migrations must be created and applied to update the database with the new application data structure.",
+        "steps": [
+            "Step: Generate and apply migrations for the HomePageContent model via standard Django commands.",
+            "Result: The model has been successfully migrated to the database."
+        ],
+        "validation": [
+            "Criteria: The database must contain tables that conform to the HomePageContent model."
+        ],
+        "dependencies": [
+            "5.1"
+        ],
+        "constraints": "Use only standard Django commands to perform migrations.",
+        "expected_output": "Migrations are complete, the model has been added to the database.",
+        "notes": "Check that the database is connected and that permissions to modify it have been granted.",
+        "files": {
+            "migrations": [
+                "/home/scisoftdev/PycharmProjects/slai/Project/slai/migrations/"
+            ]
+        },
+        "status": "completed",
+        "priority": 5,
+        "assigned_to": "GPT"
+    },
+    {
+        "task_id": "6.1",
+        "task_name": "Setting up the admin panel for editing content",
+        "description": "Register the HomePageContent model in the admin panel so that the administrator can edit the text and images on the home page.",
+        "context": "The administrator should be able to easily change text and images without editing the code.",
+        "steps": [
+            "Step: Import HomePageContent into admin.py and register the model for access in the admin panel.",
+            "Result: The HomePageContent model is editable in the admin panel."
+        ],
+        "validation": [
+            "Criteria: The model must be visible and editable in the admin interface."
+        ],
+        "dependencies": [
+            "5.2"
+        ],
+        "constraints": "Avoid excessive customization of the admin panel, use only the elements necessary for work.",
+        "expected_output": "The HomePageContent model is available in the admin panel and is functional for editing.",
+        "notes": "Make sure that access to the admin panel is protected and works correctly.",
+        "files": {
+            "admin": [
+                "/home/scisoftdev/PycharmProjects/slai/Project/slai/admin.py"
+            ]
+        },
+        "status": "completed",
+        "priority": 6,
+        "assigned_to": "GPT"
+    },
+    {
+        "task_id": "6.2",
+        "task_name": "Setting up a URL route for the home page",
+        "description": "Create a route in the urls.py of the slai application that will handle requests to the home page and associate them with the appropriate view.",
+        "context": "URL routes must be configured to properly process HTTP requests and return the desired views.",
+        "steps": [
+            "Step: Add a path to urls.py that points to the home page and links it to the home view.",
+            "Result: Requests to the main page are processed correctly and return the correct HTTP response."
+        ],
+        "validation": [
+            "Criteria: Requests to the root URL must return the content of the home page."
+        ],
+        "dependencies": [
+            "4.1"
+        ],
+        "constraints": "Use Django's built-in routing functions.",
+        "expected_output": "Working URL route for the home page.",
+        "notes": "Make sure the application is registered in the main urls.py of the project.",
+        "files": {
+            "urls": [
+                "/home/scisoftdev/PycharmProjects/slai/Project/slai/urls.py"
+            ]
+        },
+        "status": "completed",
+        "priority": 6,
+        "assigned_to": "GPT"
+    },
+    {
+        "task_id": "6.3",
+        "task_name": "Creating a view for the home page",
+        "description": "Create a view function or class in views.py that will handle requests to the main page and return the appropriate template with data from the model.",
+        "context": "You need to set up a view that processes data from the HomePageContent model and passes it to the template.",
+        "steps": [
+            "Step: Import the HomePageContent model in views.py and create a view to return the home page content.",
+            "Result: The main page is returned with correctly processed data from the model."
+        ],
+        "validation": [
+            "Criteria: The view must return the required data from the model and display it correctly on the page."
+        ],
+        "dependencies": [
+            "5.1"
+        ],
+        "constraints": "Use Django template rendering functions.",
+        "expected_output": "A working view for the main page with data from the model.",
+        "notes": "Ensure that errors due to missing model data are handled correctly.",
+        "files": {
+            "views": [
+                "/home/scisoftdev/PycharmProjects/slai/Project/slai/views.py"
+            ]
+        },
+        "status": "completed",
+        "priority": 6,
+        "assigned_to": "GPT"
+    },
+    {
+        "task_id": "6.4",
+        "task_name": "Setting up static and media files in settings.py",
+        "description": "Configure settings.py to work correctly with static files and media content, so that images uploaded through the admin panel are displayed on the main page.",
+        "context": "This is necessary to ensure that media content such as images are stored correctly and made available on the site.",
+        "steps": [
+            "Step: Change STATIC_URL, MEDIA_URL, and MEDIA_ROOT settings in settings.py to manage static and media.",
+            "Result: Files display correctly, and URLs for static and media work."
+        ],
+        "validation": [
+            "Criteria: Static and media files must be visible and accessible on the site via URL."
+        ],
+        "dependencies": [
+            "3.2"
+        ],
+        "constraints": "The settings should match an environment using the default Django settings.",
+        "expected_output": "Correctly working static and media files.",
+        "notes": "Check during development that files are saved and displayed correctly.",
+        "files": {
+            "settings": [
+                "/home/scisoftdev/PycharmProjects/slai/Project/Project/settings.py"
+            ]
+        },
+        "status": "completed",
+        "priority": 6,
+        "assigned_to": "GPT"
+    }
+]
